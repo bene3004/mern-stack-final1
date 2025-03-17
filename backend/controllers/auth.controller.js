@@ -8,7 +8,7 @@ import jwt from "jsonwebtoken";
 const JWT_SECRET = process.env.JWT_SECRET || "your_jwt_secret";
 
 export const registerUser = async (req, res) => {
-  const user = req.body;
+  const { username, email, password } = req.body;
 
   if (!user.username || !user.email || !user.password) {
     return res
@@ -37,7 +37,7 @@ export const registerUser = async (req, res) => {
 export const loginUser = async (req, res) => {
   const { email, password } = req.body;
 
-  if (!user.email || !user.password) {
+  if (!email || !password) {
     return res.status(400).json({ success: false, message: "email and password required!" });
   }
 
