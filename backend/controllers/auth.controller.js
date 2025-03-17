@@ -1,5 +1,3 @@
-import fs from "fs/promises";
-import path from "path";
 import mongoose from "mongoose";
 import User from "../models/user.model.js";
 import bcrypt from "bcrypt";
@@ -105,16 +103,5 @@ export const getUsers = async (req, res) => {
   } catch (error) {
     console.log("error in fetching users:", error.message);
     res.status(500).json({ success: false, message: "server error" });
-  }
-};
-
-export const readFileAsync = async (req, res) => {
-  try {
-    const filePath = path.join(process.cwd(), "data", "sample.txt");
-    const data = await fs.readFile(filePath, "utf-8"); // Non-blocking file read
-    res.status(200).json({ success: true, content: data });
-  } catch (error) {
-    console.error("error in reading file:", error.message);
-    res.status(500).json({ success: false, message: "error in reading file" });
   }
 };

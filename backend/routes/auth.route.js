@@ -6,8 +6,7 @@ import {
   loginUser,
   deleteUser,
   getUsers,
-  updateUser,
-  readFileAsync,
+  updateUser
 } from "../controllers/auth.controller.js";
 
 const router = express.Router();
@@ -17,6 +16,5 @@ router.post("/login", loginUser);
 router.put("/:id", authenticate, updateUser);
 router.delete("/:id", authenticate, deleteUser);
 router.get("/", authenticate, getUsers);
-router.get("/read-file", authenticate, readFileAsync);
 
 export default router;
