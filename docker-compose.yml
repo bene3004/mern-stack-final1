@@ -4,7 +4,7 @@ services:
     container_name: notes-backend
     image: notes-project-backend
     ports:
-      - "1001:1001"
+      - "1717:1717"
     depends_on:
       - mongo
     environment:

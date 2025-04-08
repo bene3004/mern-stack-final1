@@ -14,7 +14,8 @@ export const useNotesCollection = create((set) => ({
       },
       body: JSON.stringify(newNote),
     });
-    const data = await res.json();
+    
+    const data = await res.data.json();
     set((state) => ({ notes: [...state.notes, data.data] }));
     return { success: true, message: "Note added successfully" };
   },

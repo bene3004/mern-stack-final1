@@ -15,7 +15,7 @@ const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode(); // Chakra UI Theme Mode Handler
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loggingEnabled, setLoggingEnabled] = useState(Logger.isEnabled());
-  const navigate = useNavigate();
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     const loggedIn = !!localStorage.getItem("token");
