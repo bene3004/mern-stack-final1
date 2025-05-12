@@ -10,7 +10,7 @@ import userRoutes from "./routes/auth.route.js";
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 1001;
+const PORT = process.env.PORT || 1717;
 
 app.use(cors());
 app.use(express.json());

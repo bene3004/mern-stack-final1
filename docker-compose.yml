@@ -1,6 +1,7 @@
 services:
   backend1:
-    build: ./backend
+    build:
+      context: ./backend
     container_name: backend1
     image: notes-project-backend
     ports:
@@ -11,7 +12,8 @@ services:
       - MONGO_URI=mongodb://mongo:27017/mern-notes
 
   backend2:
-    build: ./backend
+    build:
+      context: ./backend
     container_name: backend2
     image: notes-project-backend
     ports:
@@ -22,7 +24,8 @@ services:
       - MONGO_URI=mongodb://mongo:27017/mern-notes
 
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
     container_name: notes-frontend
     image: notes-project-frontend
     ports:
@@ -43,7 +46,7 @@ services:
     image: haproxy:latest
     container_name: haproxy
     ports:
-      - "80:80"
+      - "8080:80"
     depends_on:
       - backend1
       - backend2
