@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   backend1:
     build: ./backend
@@ -52,6 +50,3 @@ services:
       - frontend
     volumes:
       - ./haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
-
-volumes:
-  mongo-data:
