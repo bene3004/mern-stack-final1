@@ -10,4 +10,4 @@ COPY . .
 RUN npm install -g nodemon
 
 CMD ["npm", "start"]
-EXPOSE 1001
+EXPOSE 1717

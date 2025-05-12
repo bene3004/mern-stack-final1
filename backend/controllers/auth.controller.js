@@ -8,7 +8,7 @@ const JWT_SECRET = process.env.JWT_SECRET || "your_jwt_secret";
 export const registerUser = async (req, res) => {
   const { username, email, password } = req.body;
 
-  if (!user.username || !user.email || !user.password) {
+  if (!username || !email || !password) {
     return res
       .status(400)
       .json({ success: false, message: "Please provide all the fields" });
