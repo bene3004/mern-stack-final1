@@ -5,15 +5,18 @@ import {
   deleteNote,
   getNotes,
   updateNote,
-  readFileAsync
+  readFileAsync,
+  getNoteStats
 } from "../controllers/note.controller.js";
+import cacheMiddleware from "../middleware/cache.js";
 
 const router = express.Router();
 
-router.post("/", createNote);
-router.put("/:id", updateNote);
-router.delete("/:id", deleteNote);
-router.get("/", getNotes);
+router.post("/", cacheMiddleware, createNote);
+router.put("/:id", cacheMiddleware, updateNote);
+router.delete("/:id", cacheMiddleware, deleteNote);
+router.get("/", cacheMiddleware, getNotes);
 router.get("/read-file", readFileAsync);
+router.get("/stats", cacheMiddleware, getNoteStats);
 
 export default router;
