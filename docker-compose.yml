@@ -4,7 +4,7 @@ services:
     container_name: backend1
     image: notes-project-backend
     ports:
-      - "1718:1717"
+      - "1717:1717"
     depends_on:
       - mongo
     environment:
@@ -15,7 +15,7 @@ services:
     container_name: backend2
     image: notes-project-backend
     ports:
-      - "1719:1717"
+      - "1718:1717"
     depends_on:
       - mongo
     environment:
@@ -47,7 +47,6 @@ services:
     depends_on:
       - backend1
       - backend2
-      - frontend
     volumes:
       - ./haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
 
