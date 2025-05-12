@@ -9,6 +9,8 @@ services:
       - mongo
     environment:
       - MONGO_URI=mongodb://mongo:27017/mern-notes
+    networks:
+      - notes-net
 
   backend2:
     build: ./backend
@@ -20,6 +22,8 @@ services:
       - mongo
     environment:
       - MONGO_URI=mongodb://mongo:27017/mern-notes
+    networks:
+      - notes-net
 
   frontend:
     build: ./frontend
@@ -49,6 +53,8 @@ services:
       - backend2
     volumes:
       - ./haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+    networks:
+      - notes-net
 
 volumes:
   mongo-data:
