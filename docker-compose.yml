@@ -31,8 +31,7 @@ services:
     ports:
       - "4001:4001"
     depends_on:
-      - backend1
-      - backend2
+      - haproxy
 
   mongo:
     image: mongo
