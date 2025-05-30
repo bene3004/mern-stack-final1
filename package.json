@@ -5,11 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon backend/server.js",
-    "prepare": "husky install",
-    "logs:haproxy": "docker logs haproxy",
-    "logs:backend1": "docker logs backend1",
-    "logs:backend2": "docker logs backend2",
-    "logs:all": "npm run logs:haproxy && npm run logs:backend1 && npm run logs:backend2"
+    "prepare": "husky install"
   },
   "type": "module",
   "keywords": [],
@@ -17,7 +13,6 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "axios": "^1.9.0",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",

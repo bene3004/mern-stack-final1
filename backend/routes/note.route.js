@@ -6,9 +6,8 @@ import {
   getAllNotes,
   updateNote,
   readFileAsync,
-  getNoteStats
-} from "../controllers/note.controller.js";
-import cacheMiddleware from "../middleware/cache.js";
+} from '../controllers/note.controller.js';
+import cacheMiddleware from "../middleware/cache.middleware.js";
 
 const router = express.Router();
 
@@ -17,6 +16,6 @@ router.put("/:id", updateNote);
 router.delete("/:id", deleteNote);
 router.get("/", cacheMiddleware, getAllNotes);
 router.get("/read-file", readFileAsync);
-router.get("/stats", cacheMiddleware, getNoteStats);
+router.get("/total", getAllNotes);
 
 export default router;
