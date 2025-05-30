@@ -12,7 +12,7 @@ const StatsPage = () => {
 
   return (
     <div>
-      <h2>Notes pro user</h2>
+      <h2>Total Notes per user</h2>
       <ul>
         {stats.map((item) => (
           <li key={item.userId}>

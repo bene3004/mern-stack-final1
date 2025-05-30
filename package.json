@@ -5,7 +5,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon backend/server.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "logs:haproxy": "docker logs haproxy",
+    "logs:backend1": "docker logs backend1",
+    "logs:backend2": "docker logs backend2",
+    "logs:all": "npm run logs:haproxy && npm run logs:backend1 && npm run logs:backend2"
   },
   "type": "module",
   "keywords": [],

@@ -7,12 +7,12 @@ export const Logger = {
 
   enable: () => {
     localStorage.setItem(LOGGING_ENABLED_KEY, "true");
-    console.log("[Logger] Logging aktiviert.");
+    console.log("[Logger] Logging activated.");
   },
 
   disable: () => {
     localStorage.setItem(LOGGING_ENABLED_KEY, "false");
-    console.log("[Logger] Logging deaktiviert.");
+    console.log("[Logger] Logging deactivated.");
   },
 
   log: (...args) => {

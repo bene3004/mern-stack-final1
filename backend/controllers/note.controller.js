@@ -82,6 +82,7 @@ export const readFileAsync = async (req, res) => {
   }
 };
 
+// total n notes per user
 export const getNoteStats = async (req, res) => {
   try {
     const stats = await Note.aggregate([
