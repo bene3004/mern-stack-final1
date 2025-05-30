@@ -17,7 +17,7 @@ services:
     container_name: backend2
     image: notes-project-backend2
     ports:
-      - "1718:1718"
+      - "1718:1717"
     depends_on:
       - mongo
     environment:

@@ -13,7 +13,7 @@ const LogInPage = () => {
 
   const handleLogin = async () => {
     try {
-      const res = await fetch("http://localhost:1001/api/users/login", {
+      const res = await fetch("http://localhost:1717/api/users/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -23,14 +23,14 @@ const LogInPage = () => {
 
       if (data.success) {
         localStorage.setItem("token", data.token);
-        toast({ title: "Login erfolgreich!", status: "success", duration: 2000 });
+        toast({ title: "Login successful!", status: "success", duration: 2000 });
         navigate("/");
       } else {
         toast({ title: data.message, status: "error", duration: 2000 });
       }
     } catch (error) {
-      console.error("Fehler beim Login:", error);
-      toast({ title: "Serverfehler!", status: "error", duration: 2000 });
+      console.error("Error while Login:", error);
+      toast({ title: "Server error!", status: "error", duration: 2000 });
     }
   };
 
