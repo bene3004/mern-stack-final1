@@ -52,3 +52,7 @@ services:
     volumes:
       - ./haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
       - haproxy-logs:/var/log/haproxy
+
+volumes:
+  mongo-data:
+  haproxy-logs:

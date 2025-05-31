@@ -7,14 +7,13 @@ import {
   updateNote,
   readFileAsync,
 } from '../controllers/note.controller.js';
-import cacheMiddleware from "../middleware/cache.middleware.js";
 
 const router = express.Router();
 
 router.post("/", createNote);
 router.put("/:id", updateNote);
 router.delete("/:id", deleteNote);
-router.get("/", cacheMiddleware, getAllNotes);
+router.get("/", getAllNotes);
 router.get("/read-file", readFileAsync);
 router.get("/total", getAllNotes);
 
